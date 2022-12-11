@@ -1,0 +1,38 @@
+{
+  "name": "node-jibit",
+  "version": "1.0.0",
+  "description": "client for https://jibit.ir/ services",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node ./src/dev.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragon-master-5892/node-jibit.git"
+  },
+  "keywords": [
+    "jibit"
+  ],
+  "author": "dragon-master-5892",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dragon-master-5892/node-jibit/issues"
+  },
+  "homepage": "https://github.com/dragon-master-5892/node-jibit#readme",
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "gts": "^3.1.1",
+    "typescript": "~4.7.0"
+  },
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
+}
