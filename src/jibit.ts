@@ -1,9 +1,4 @@
-// JIBIT_API_KEY=XiPw_sOvy6
-// JIBIT_SECRET_KEY=Ff2DocHUddQ0OKwRlX6GzXSfd
 
-// محمد شبیری FuDev, [11/19/22 2:24 PM]
-// API Key: XiPw_sOvy6
-// Secret Key: Ff2DocHUddQ0OKwRlX6GzXSfd
 
 // محمد شبیری FuDev, [11/19/22 2:24 PM]
 // استعلام شبا از شماره کارت
