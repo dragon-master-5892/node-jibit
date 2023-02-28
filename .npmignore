@@ -5,3 +5,5 @@ src/
 .eslintrc.json
 .prettierrc.js
 .env
+dev.ts
+pass.txt
