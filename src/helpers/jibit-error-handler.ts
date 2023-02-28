@@ -13,8 +13,8 @@ export class JibitErrorHandler extends Error {
   public getErrorDetails(): {code: string; message: string} {
     return (
       this.error?.response?.data || {
-        code: this.error.code,
-        message: this.error.message,
+        code: this.error.code || '',
+        message: this.error.message || '',
       }
     );
   }

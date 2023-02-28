@@ -146,11 +146,6 @@ export class BaseJibitClient extends events.EventEmitter {
     if (throwErr) throw error;
   }
 
-  protected emitLog(data: any) {
-    this.emit('log', data || 'no log data!!');
-    return this;
-  }
-
   protected async post<T>(
     endPoint: string,
     data?: any,
@@ -164,7 +159,7 @@ export class BaseJibitClient extends events.EventEmitter {
             .then(resp => {
               resolve(resp.data);
             })
-            .catch(err => {
+            .catch((err: Error) => {
               this.emitError(err);
               reject(err);
             });
@@ -188,7 +183,7 @@ export class BaseJibitClient extends events.EventEmitter {
             .then(resp => {
               resolve(resp.data);
             })
-            .catch(err => {
+            .catch((err: Error) => {
               this.emitError(err);
               reject(err);
             });

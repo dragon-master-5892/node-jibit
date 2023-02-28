@@ -122,10 +122,6 @@ class BaseJibitClient extends events.EventEmitter {
         if (throwErr)
             throw error;
     }
-    emitLog(data) {
-        this.emit('log', data || 'no log data!!');
-        return this;
-    }
     async post(endPoint, data, config) {
         return this.loginIfNeed(() => new Promise((resolve, reject) => {
             this.client
@@ -133,7 +129,7 @@ class BaseJibitClient extends events.EventEmitter {
                 .then(resp => {
                 resolve(resp.data);
             })
-                .catch(err => {
+                .catch((err) => {
                 this.emitError(err);
                 reject(err);
             });
@@ -149,7 +145,7 @@ class BaseJibitClient extends events.EventEmitter {
                 .then(resp => {
                 resolve(resp.data);
             })
-                .catch(err => {
+                .catch((err) => {
                 this.emitError(err);
                 reject(err);
             });

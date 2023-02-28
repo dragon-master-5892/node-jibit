@@ -15,8 +15,8 @@ class JibitErrorHandler extends Error {
     getErrorDetails() {
         var _a, _b;
         return (((_b = (_a = this.error) === null || _a === void 0 ? void 0 : _a.response) === null || _b === void 0 ? void 0 : _b.data) || {
-            code: this.error.code,
-            message: this.error.message,
+            code: this.error.code || '',
+            message: this.error.message || '',
         });
     }
     getRequestURL() {

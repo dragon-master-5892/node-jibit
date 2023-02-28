@@ -17,7 +17,6 @@ export declare class BaseJibitClient extends events.EventEmitter {
     private loginByRefreshToken;
     private loginIfNeed;
     protected emitError(error: Error, throwErr?: boolean): void;
-    protected emitLog(data: any): this;
     protected post<T>(endPoint: string, data?: any, config?: AxiosRequestConfig<T> | undefined): Promise<T>;
     protected get<T>(endPoint: string, params?: any, config?: AxiosRequestConfig<any> | undefined): Promise<T>;
 }

@@ -1,6 +1,6 @@
 {
   "name": "node-jibit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "client for https://jibit.ir/ services",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
@@ -14,7 +14,8 @@
     "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
