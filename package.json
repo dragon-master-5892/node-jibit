@@ -19,7 +19,9 @@
     "url": "git+https://github.com/dragon-master-5892/node-jibit.git"
   },
   "keywords": [
-    "jibit"
+    "jibit",
+    "node-jibit",
+    "جیبیت"
   ],
   "author": "dragon-master-5892",
   "license": "MIT",
