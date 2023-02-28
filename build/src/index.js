@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const jibit_1 = require("./jibit");
-exports.default = jibit_1.default;
+exports.JibitIdenticatorClient = void 0;
+var jibit_identicator_client_1 = require("./jibit-identicator-client");
+Object.defineProperty(exports, "JibitIdenticatorClient", { enumerable: true, get: function () { return jibit_identicator_client_1.JibitIdenticatorClient; } });
 //# sourceMappingURL=index.js.map

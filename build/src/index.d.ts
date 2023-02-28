@@ -1,2 +1,1 @@
-import JibitClient from './jibit';
-export default JibitClient;
+export { JibitIdenticatorClient } from './jibit-identicator-client';

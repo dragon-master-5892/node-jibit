@@ -1,10 +1,4 @@
 "use strict";
-// JIBIT_API_KEY=XiPw_sOvy6
-// JIBIT_SECRET_KEY=Ff2DocHUddQ0OKwRlX6GzXSfd
-Object.defineProperty(exports, "__esModule", { value: true });
-// محمد شبیری FuDev, [11/19/22 2:24 PM]
-// API Key: XiPw_sOvy6
-// Secret Key: Ff2DocHUddQ0OKwRlX6GzXSfd
 // محمد شبیری FuDev, [11/19/22 2:24 PM]
 // استعلام شبا از شماره کارت
 // استعلام هم خوانی اطلاعات ثبت احوال
@@ -13,6 +7,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // استعلام اطلاعات کارت
 // استعلام آدرس از کد پستی
 // استعلام هم خوانی شماره موبایل و کد ملی
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.JibitClient = void 0;
 const axios_1 = require("axios");
 class JibitClient {
     constructor(apiKey, secretKey) {
@@ -64,22 +60,19 @@ class JibitClient {
     get() { }
     put() { }
     delete() { }
+    setToken(token) {
+        this.accessToken = token;
+    }
     async ibansStatusCheck(ibans) {
         const response = await axios_1.default.get(`https://napi.jibit.ir/ide/v1/ibans?value=${ibans}`, {
             headers: {
                 Authorization: this.getBearerToken(),
             },
         });
-        if (response.status === 200) {
-            return {
-                success: true,
-                value: response.data.value,
-                ibanInfo: response.data.ibanInfo,
-            };
-        }
-        else {
-            return { success: false };
-        }
+        return {
+            success: response.status === 200,
+            ...response.data,
+        };
     }
     async cardStatusCheck(card) {
         const response = await axios_1.default.get(`https://napi.jibit.ir/ide/v1/cards?number=${card}`, {
@@ -87,16 +80,15 @@ class JibitClient {
                 Authorization: this.getBearerToken(),
             },
         });
-        if (response.status === 200) {
-            return {
-                success: true,
-                value: response.data.value,
-                ibanInfo: response.data.ibanInfo,
-            };
-        }
-        else {
-            return { success: false };
-        }
+        return {
+            success: response.status === 200,
+            ...response.data,
+            // value: response.data.value,
+            // ibanInfo: response.data.ibanInfo,
+            // cardNumber:response.data.number,
+            // cardInfo:response.data.
+            // respData: response.data,
+        };
     }
     async mobileAndNationalCodeCheck(mobile, nationalCode) {
         const response = await axios_1.default.get(`https://napi.jibit.ir/ide/v1/services/matching?nationalCode=${nationalCode.trim()}&mobileNumber=${mobile}`, {
@@ -104,17 +96,14 @@ class JibitClient {
                 Authorization: this.getBearerToken(),
             },
         });
-        if (response.status === 200) {
-            return {
-                success: true,
-                value: response.data.value,
-                ibanInfo: response.data.ibanInfo,
-            };
-        }
-        else {
-            return { success: false };
-        }
+        return {
+            success: response.status === 200,
+            ...response.data,
+        };
+    }
+    async connect() {
+        return this.getToken();
     }
 }
-exports.default = JibitClient;
+exports.JibitClient = JibitClient;
 //# sourceMappingURL=jibit.js.map

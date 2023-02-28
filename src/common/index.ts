@@ -1,0 +1,22 @@
+export {Bank, BankAccountStatus, CardType, BankAvailability} from './types';
+export {
+  TokenDto,
+  JibitClientOptions,
+  AccountToIBANResponse,
+  RefreshTokenDto,
+  InquiryIBANResponse,
+  CardInfo,
+  DepositToIBANInfo,
+  IbanInfo,
+  InquiryCardResponse,
+  Owner,
+  CardToAccountResponse,
+  DepositInfo,
+  CardToIBANResponse,
+  AvailabilityReport,
+  IsCardToIBANAccessibleResponse,
+  MatchingResponse,
+  AddressInfo,
+  InqueryPostalCodeResponse,
+  IdentitySimilarityResponse,
+} from './interfaces';

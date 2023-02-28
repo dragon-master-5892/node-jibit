@@ -1,4 +1,4 @@
-export default class JibitClient {
+export declare class JibitClient {
     apiKey: string;
     secretKey: string;
     accessToken: string;
@@ -11,31 +11,9 @@ export default class JibitClient {
     private get;
     private put;
     private delete;
-    ibansStatusCheck(ibans: string): Promise<{
-        success: boolean;
-        value: any;
-        ibanInfo: any;
-    } | {
-        success: boolean;
-        value?: undefined;
-        ibanInfo?: undefined;
-    }>;
-    cardStatusCheck(card: string): Promise<{
-        success: boolean;
-        value: any;
-        ibanInfo: any;
-    } | {
-        success: boolean;
-        value?: undefined;
-        ibanInfo?: undefined;
-    }>;
-    mobileAndNationalCodeCheck(mobile: string, nationalCode: string): Promise<{
-        success: boolean;
-        value: any;
-        ibanInfo: any;
-    } | {
-        success: boolean;
-        value?: undefined;
-        ibanInfo?: undefined;
-    }>;
+    setToken(token: string): void;
+    ibansStatusCheck(ibans: string): Promise<any>;
+    cardStatusCheck(card: string): Promise<any>;
+    mobileAndNationalCodeCheck(mobile: string, nationalCode: string): Promise<any>;
+    connect(): Promise<boolean>;
 }
