@@ -30,6 +30,9 @@ export class BaseJibitClient extends events.EventEmitter {
       }
       return config;
     });
+
+    this.on('error', () => {});
+    this.on('login', () => {});
   }
 
   private getBearerToken() {

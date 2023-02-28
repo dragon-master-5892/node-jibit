@@ -27,6 +27,8 @@ class BaseJibitClient extends events.EventEmitter {
             }
             return config;
         });
+        this.on('error', () => { });
+        this.on('login', () => { });
     }
     getBearerToken() {
         return `Bearer ${this.accessToken}`;

@@ -10,22 +10,25 @@ async function main() {
     const instance = new src_1.JibitIdenticatorClient(apiKey, secretKey, {
         timeout: 120000,
     });
-    instance.on('login', (ac, rt, m) => {
-        console.log(m + '\n');
-    });
-    instance.on('log', data => {
-        console.log(data + '\n');
-    });
-    instance.on('error', error => {
-        const errHandler = new helpers_1.JibitErrorHandler(error);
-        console.log('⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕\n');
-        console.error(errHandler.getErrorDetails());
-        console.error(errHandler.getRequestURL());
-        console.log('⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕\n');
-    });
+    // instance.on('login', (ac, rt, m) => {
+    //   console.log(m + '\n');
+    // });
+    // instance.on('error', error => {
+    //   const errHandler = new JibitErrorHandler(error);
+    //   console.log('⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕\n');
+    //   console.error(errHandler.getErrorDetails());
+    //   console.error(errHandler.getRequestURL());
+    //   console.log('⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕⭕\n');
+    // });
     //کارت به حساب
-    let cardToAccountResult = await instance.cardToAccount('6104337494925082');
-    console.log(cardToAccountResult);
+    try {
+        const cardToAccountResult = await instance.cardToAccount('6104337494925083');
+        console.log(cardToAccountResult);
+    }
+    catch (error) {
+        console.log(new helpers_1.JibitErrorHandler(error).getErrorDetails());
+        console.log(111111111111111111111111111111111111111111111111111);
+    }
     // حساب به شبا
     // let accountToIBANResult = await instance.accountToIBAN(
     //   'MELLAT',
@@ -102,9 +105,10 @@ async function main() {
 }
 main()
     .then(() => {
-    //console.log('opration success');
+    console.log('opration success');
 })
-    .catch(() => {
-    // console.error(err.message);
+    .catch(err => {
+    console.log(11111111111111111111111111111111111111111111111111);
+    console.error(err.message);
 });
 //# sourceMappingURL=dev.js.map
