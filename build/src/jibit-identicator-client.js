@@ -1,12 +1,4 @@
 "use strict";
-// محمد شبیری FuDev, [11/19/22 2:24 PM]
-// استعلام شبا از شماره کارت
-// استعلام هم خوانی اطلاعات ثبت احوال
-// استعلام شبا
-// استعلام همخوانی شماره کارت و کد ملی
-// استعلام اطلاعات کارت
-// استعلام آدرس از کد پستی
-// استعلام هم خوانی شماره موبایل و کد ملی
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JibitIdenticatorClient = void 0;
 const base_jibit_client_1 = require("./base-jibit-client");
