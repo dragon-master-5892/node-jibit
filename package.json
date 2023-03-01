@@ -1,6 +1,6 @@
 {
   "name": "node-jibit",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "client for https://jibit.ir/ services",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
